@@ -434,9 +434,6 @@ RUN set -ex; \
 	done; \
 	cat "$ROOTFS/etc/inittab"
 
-# fix "su -"
-RUN echo root > "$ROOTFS/etc/sysconfig/superuser"
-
 # add some timezone files so we're explicit about being UTC
 RUN echo 'UTC' > "$ROOTFS/etc/timezone" \
 	&& cp -vL /usr/share/zoneinfo/UTC "$ROOTFS/etc/localtime"
