@@ -75,7 +75,6 @@ RUN cd /linux-kernel && \
 # Remove useless kernel modules, based on unclejack/debian2docker
 RUN cd $ROOTFS/lib/modules && \
     rm -rf ./*/kernel/sound/* && \
-    rm -rf ./*/kernel/drivers/gpu/* && \
     rm -rf ./*/kernel/drivers/infiniband/* && \
     rm -rf ./*/kernel/drivers/isdn/* && \
     rm -rf ./*/kernel/drivers/media/* && \
@@ -130,7 +129,104 @@ ENV TCZ_DEPS        iptables \
                     procps glib2 libtirpc libffi fuse pcre \
                     udev-lib udev-extra \
                     liblvm2 \
-                    parted
+                    parted \
+                    Xlibs \
+                    Xorg-7.7 \
+                    Xorg-7.7-bin \
+                    Xorg-7.7-lib \
+                    Xorg-fonts \
+                    Xprogs \
+                    acpid \
+                    at-spi2-atk \
+                    at-spi2-core \
+                    aterm \
+                    atk \
+                    cairo \
+                    dbus \
+                    expat2 \
+                    fluxbox \
+                    fontconfig \
+                    freetype \
+                    fuse \
+                    gdk-pixbuf2 \
+                    glib2 \
+                    glu \
+                    gtk3 \
+                    harfbuzz \
+                    imlib2 \
+                    imlib2-bin \
+                    libEGL \
+                    libFS \
+                    libGL \
+                    libGLESv2 \
+                    libICE \
+                    libSM \
+                    libX11 \
+                    libXau \
+                    libXaw \
+                    libXcomposite \
+                    libXcursor \
+                    libXdamage \
+                    libXdmcp \
+                    libXext \
+                    libXfixes \
+                    libXfont \
+                    libXft \
+                    libXi \
+                    libXinerama \
+                    libXmu \
+                    libXpm \
+                    libXrandr \
+                    libXrender \
+                    libXres \
+                    libXss \
+                    libXt \
+                    libXtst \
+                    libXv \
+                    libXvmc \
+                    libXxf86dga \
+                    libXxf86vm \
+                    libcroco \
+                    libdmx \
+                    libdrm \
+                    libepoxy \
+                    libevdev \
+                    libffi \
+                    libfontenc \
+                    libjpeg-turbo \
+                    libpciaccess \
+                    libpng \
+                    librsvg \
+                    libtiff \
+                    libtirpc \
+                    libxcb \
+                    libxkbcommon \
+                    libxkbfile \
+                    libxml2 \
+                    libxshmfence \
+                    mtdev \
+                    ncurses \
+                    nfs-utils \
+                    openssh \
+                    openssl \
+                    pango \
+                    pcre \
+                    pixman \
+                    shared-mime-info \
+                    tcp_wrappers \
+                    udev-extra \
+                    udev-lib \
+                    vte-2.90 \
+                    xcursor-themes \
+                    xf86-input-evdev \
+                    xf86-input-synaptics \
+                    xf86-video-amdgpu \
+                    xf86-video-ati \
+                    xf86-video-intel \
+                    xf86-video-vesa \
+                    xf86-video-vmware \
+                    xkeyboard-config \
+                    xorg-server
 
 # Download the rootfs, don't unpack it though:
 RUN curl -fL -o /tcl_rootfs.gz $TCL_REPO_BASE/release/distribution_files/rootfs64.gz
