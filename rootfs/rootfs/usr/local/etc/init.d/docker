@@ -6,8 +6,8 @@
 test -f '/var/lib/boot2docker/profile' && . '/var/lib/boot2docker/profile'
 
 : ${DOCKER_HOST:='-H tcp://0.0.0.0:2375'}
-: ${DOCKER_TLS:=auto}
-: ${DOCKER_STORAGE:=auto}
+: ${DOCKER_TLS:=no}
+: ${DOCKER_STORAGE:=vfs}
 : ${DOCKER_DIR:=/var/lib/docker}
 : ${DOCKER_ULIMITS:=1048576}
 : ${DOCKER_LOGFILE:=/var/lib/boot2docker/docker.log}
