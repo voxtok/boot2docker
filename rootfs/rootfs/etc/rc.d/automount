@@ -86,7 +86,7 @@ if [ ! -n "$BOOT2DOCKER_DATA" ]; then
     else
         # Pick the first ext4 as a fallback
         # TODO: mount all Linux partitions and look for a /var/lib/docker...
-        BOOT2DOCKER_DATA=`blkid | grep -e 'TYPE="btrfs"'  -e 'TYPE="ext4"' | head -n 1 | sed 's/:.*//'`
+        # BOOT2DOCKER_DATA=`blkid | grep -e 'TYPE="btrfs"'  -e 'TYPE="ext4"' | head -n 1 | sed 's/:.*//'`
     fi
 fi
 
