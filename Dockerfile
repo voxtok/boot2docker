@@ -74,7 +74,6 @@ RUN cd /linux-kernel && \
 
 # Remove useless kernel modules, based on unclejack/debian2docker
 RUN cd $ROOTFS/lib/modules && \
-    rm -rf ./*/kernel/sound/* && \
     rm -rf ./*/kernel/drivers/infiniband/* && \
     rm -rf ./*/kernel/drivers/isdn/* && \
     rm -rf ./*/kernel/drivers/media/* && \
@@ -226,7 +225,9 @@ ENV TCZ_DEPS        iptables \
                     xf86-video-vesa \
                     xf86-video-vmware \
                     xkeyboard-config \
-                    xorg-server
+                    xorg-server \
+                    libasound \
+                    alsa
 
 # Download the rootfs, don't unpack it though:
 RUN curl -fL -o /tcl_rootfs.gz $TCL_REPO_BASE/release/distribution_files/rootfs64.gz
