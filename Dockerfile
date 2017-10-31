@@ -449,13 +449,7 @@ RUN set -x \
 	&& chroot "$ROOTFS" adduser -S -G dockremap dockremap
 
 # Get the git versioning info
-COPY .git /git/.git
-RUN set -ex \
-	&& GIT_BRANCH="$(git -C /git rev-parse --abbrev-ref HEAD)" \
-	&& GITSHA1="$(git -C /git rev-parse --short HEAD)" \
-	&& DATE="$(date)" \
-	&& echo "${GIT_BRANCH} : ${GITSHA1} - ${DATE}" \
-		| tee "$ROOTFS/etc/boot2docker"
+COPY git-version $ROOTFS/etc/boot2docker
 
 # Copy boot params
 COPY rootfs/isolinux /tmp/iso/boot/isolinux
