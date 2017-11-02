@@ -2,6 +2,5 @@
 
 GIT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
 GITSHA1="$(git rev-parse --short HEAD)"
-DATE="$(date)"
-echo "${GIT_BRANCH} : ${GITSHA1} - ${DATE}" \
+echo "${GIT_BRANCH} : ${GITSHA1}" \
     | tee git-version
